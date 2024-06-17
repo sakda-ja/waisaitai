@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\DepartmentController;
 use App\Models\User;
+use App\Http\Controllers\ServiceController;
 
 
 
@@ -35,6 +36,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
         Route::get('/department/edit/{id}', [DepartmentController::class, 'edit']);
         Route::post('/department/update/{id}', [DepartmentController::class, 'update']);
         Route::get('/delete/{id}', [DepartmentController::class, 'delete'])->name('delete');
+
+
+
+
+        //Route Service CRUD ดึง เพิ่ม แก้ไข ลบถาวร อัปโหลดภาพ
+        Route::get ('/service/all' , [ServiceController::class, 'index'] )->name('services'); //บริการอัปโหลด
+        Route::post('/service/add' , [ServiceController::class , 'store'] )->name('addService');  //การเพิ่มข้อมูล
+        
+        Route::get('/service/delete/{id}',[ServiceController::class,'delete']);//Route ของการลบ{ของอัปโหลดภาพ}
 
 
 });

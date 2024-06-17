@@ -20,6 +20,9 @@
                         {{ __('Department') }}
                     </x-nav-link>
 
+                    <x-nav-link href="{{ route('services') }}" >
+                        {{ __('Service') }}
+                    </x-nav-link>
 
 
                 </div>

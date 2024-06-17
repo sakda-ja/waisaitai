@@ -83,8 +83,9 @@ class DepartmentController extends Controller
           ]);
             return redirect()->route('department')->with('success' , "อัปเดทข้อมูลสำเร็จ");
 
-
         }
+
+
 //ลบข้อมูลถาวร
     public function delete($id)
     {
@@ -93,6 +94,11 @@ class DepartmentController extends Controller
     }
 
 
+
+
+
+
+    
 }
 
 
